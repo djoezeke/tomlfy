@@ -1,0 +1,11 @@
+---
+# Uses the built-in Google style as a base.
+BasedOnStyle: Google
+Standard: Latest
+Language: Cpp
+DisableFormat: false
+IncludeBlocks: Preserve
+ColumnLimit: 150
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
