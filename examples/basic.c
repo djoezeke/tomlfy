@@ -2,23 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../mytoml.h"
+#include <mytoml/mytoml.h>
 
-int main(int argc, char *argv[])
-{
-
+int main(int argc, char *argv[]) {
     char *file = NULL;
-    if (argc > 1)
-        file = argv[1];
-    TomlKey *toml = tomlLoadFile(file);
-    if (toml == NULL)
-        return 1;
-    // char *buffer = "";
-    // size_t size = 0;
-    // toml_key_dump(toml, &buffer, &size);
-    // printf(buffer);
-    tomlKeyDumpFile(toml, argv[2]);
-    tomlFree(toml);
+    if (argc > 1) file = argv[1];
+    TomlKey *toml = toml_load_file_name(file);
+    if (toml == NULL) return 1;
+    toml_key_dump_file_name(toml, argv[2]);
+    toml_free(toml);
     return 0;
 }
 
